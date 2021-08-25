@@ -106,6 +106,8 @@ spec:
         memory: 128Mi
     route:
       enabled: true
+      tls:
+        termination: edge
     service:
       type: ""
   tls:
