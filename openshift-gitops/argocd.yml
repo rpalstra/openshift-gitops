@@ -21,15 +21,9 @@ spec:
       requests:
         cpu: 250m
         memory: 1Gi
-  dex:
-    openShiftOAuth: true
-    resources:
-      limits:
-        cpu: 500m
-        memory: 256Mi
-      requests:
-        cpu: 250m
-        memory: 128Mi
+  extraConfig:
+    help.chatUrl: ''
+    help.chatText: ''
   grafana:
     enabled: false
     ingress:
@@ -110,5 +104,16 @@ spec:
         termination: edge
     service:
       type: ""
+  sso: 
+    provider: dex
+    dex:
+      openShiftOAuth: true
+      resources:
+        limits:
+          cpu: 500m
+          memory: 256Mi
+        requests:
+          cpu: 250m
+          memory: 128Mi
   tls:
     ca: {}
